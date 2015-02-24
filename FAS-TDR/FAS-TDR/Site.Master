@@ -1,0 +1,272 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FAS_TDR.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    FAS Finance & Investment Limited.
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/UI/Default.aspx" Text="Home"/>
+                        <asp:MenuItem Text="Product" Value="Product">
+                           <asp:MenuItem Text="FFIL Three Months Profit Scheme" 
+                                Value="FFIL Three Months Profit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single" 
+                                    NavigateUrl="~/UI/SingleDeposit.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Semi Annual Profit Scheme" 
+                                Value="FFIL Semi Annual Profit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Annual Profit Scheme" 
+                                Value="FFIL Annual Profit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Cumulative Profit Scheme" 
+                                Value="FFIL Cumulative Profit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Earn Ahead Deposit Scheme" 
+                                Value="FFIL Earn Ahead Deposit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Monthly Profit Earner Scheme" 
+                                Value="FFIL Monthly Profit Earner Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Quarterly Profit Earner Scheme" 
+                                Value="FFIL Quarterly Profit Earner Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Half-Yearly Profit Earner Scheme " 
+                                Value="FFIL Half-Yearly Profit Earner Scheme ">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Double Money Program" 
+                                Value="FFIL Double Money Program">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Triple Money Program" 
+                                Value="FFIL Triple Money Program">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            
+                            
+                            
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem Text="Deposit" Value="Deposit">
+                            <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                            <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                            <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                            <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                            <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                            <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                            <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Report" Value="Report">
+                            <asp:MenuItem Text="FFIL Three Months Profit Scheme" 
+                                Value="FFIL Three Months Profit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single" 
+                                    NavigateUrl="~/Report/SingleReport.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Semi Annual Profit Scheme" 
+                                Value="FFIL Semi Annual Profit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Annual Profit Scheme" 
+                                Value="FFIL Annual Profit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Cumulative Profit Scheme" 
+                                Value="FFIL Cumulative Profit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Earn Ahead Deposit Scheme" 
+                                Value="FFIL Earn Ahead Deposit Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Monthly Profit Earner Scheme" 
+                                Value="FFIL Monthly Profit Earner Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Quarterly Profit Earner Scheme" 
+                                Value="FFIL Quarterly Profit Earner Scheme">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Half-Yearly Profit Earner Scheme " 
+                                Value="FFIL Half-Yearly Profit Earner Scheme ">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Double Money Program" 
+                                Value="FFIL Double Money Program">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FFIL Triple Money Program" 
+                                Value="FFIL Triple Money Program">
+                                <asp:MenuItem Text="Single" Value="Single"></asp:MenuItem>
+                                <asp:MenuItem Text="Jointly" Value="Jointly"></asp:MenuItem>
+                                <asp:MenuItem Text="Institution" Value="Institution"></asp:MenuItem>
+                                <asp:MenuItem Text="Bank" Value="Bank"></asp:MenuItem>
+                                <asp:MenuItem Text="NBFI" Value="NBFI"></asp:MenuItem>
+                                <asp:MenuItem Text="Corporate" Value="Corporate"></asp:MenuItem>
+                                <asp:MenuItem Text="Others" Value="Others"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
